@@ -5,9 +5,8 @@ import requests
 
 app = Flask(__name__)
 
-# -----------------------------
-# LOAD ALL MODELS & DATA
-# -----------------------------
+
+#LOAD ALL MODELS & DATA
 
 # Original text dataset (for KNN + display)
 with open("dataset.pkl", "rb") as f:
@@ -44,9 +43,7 @@ tfidf_matrix = tfidf.transform(Rdataset_text["tags"])
 Rdataset_text["title_lower"] = Rdataset_text["original_title"].str.lower()
 
 
-# -----------------------------
 # TMDB POSTER FETCH FUNCTION
-# -----------------------------
 TMDB_API_KEY = "9fee797989b5d275957d74ca506e184f"
 
 def get_poster(movie_title):
@@ -65,11 +62,7 @@ def get_poster(movie_title):
     # fallback local placeholder
     return "/static/posters/default.jpeg"
 
-
-# -----------------------------
 # ROUTES
-# -----------------------------
-
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -115,8 +108,6 @@ def recommend():
     return render_template("index.html", recommendations=recommendations)
 
 
-# -----------------------------
 # RUN APP
-# -----------------------------
 if __name__ == "__main__":
     app.run(debug=True)
