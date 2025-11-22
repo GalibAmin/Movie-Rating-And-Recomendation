@@ -13,6 +13,8 @@ A Flask web app that recommends movies based on KNN similarity and predicts rati
 3. Run the app: `python app.py`
 4. Open: `http://127.0.0.1:5000/`
 
+Note-KNN(Movies_Rating_and_Recommendation).ipynb is code that will run on google collab for knn and randomforest model and all the pickles files so dont include this file on your working environment delete this file if u are working on vs-code (optional u can download and run on google collab to see the working mechanism of the project models).Rest everything will be same.
+
 ## Dependencies
 - Flask
 - pandas
