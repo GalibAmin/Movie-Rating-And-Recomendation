@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<h1>Movie Recommendation System</h1>
+
+<form action="/recommend" method="post">
+    <input type="text" name="movie" placeholder="Enter movie name" required>
+    <input type="submit" value="Recommend">
+</form>
+
+{% if recommendations %}
+    {% if recommendations[0] == "Movie not found!" %}
+        <h2 style="text-align:center;">Movie not found!</h2>
+    {% else %}
+        <h2 style="text-align:center;">Recommended Movies:</h2>
+        <div class="recommendations">
+            {% for r in recommendations %}
+                <div class="movie">
+                    <img src="{{ r.poster }}" alt="Poster">
+                    <strong>{{ r.title }}</strong>
+                    <span>⭐ Rating: {{ r.rating }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endif %}
+
+</body>
+</html>

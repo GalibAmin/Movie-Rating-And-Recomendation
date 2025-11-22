@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://image.tmdb.org/t/p/original/your-background.jpg') center/cover no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: -1;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 3em;
+    text-shadow: 2px 2px 8px black;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+input[type="text"] {
+    padding: 12px 20px;
+    width: 400px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    width: 500px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.8);
+}
+
+input[type="submit"] {
+    margin-left: 10px;
+    padding: 12px 25px;
+    border-radius: 50px;
+    border: none;
+    background: #e50914;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: #f40612;
+}
+
+.recommendations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px;
+}
+
+.movie {
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 15px;
+    width: 160px;
+    transition: transform 0.3s;
+}
+
+.movie:hover {
+    transform: scale(1.05);
+}
+
+.movie img {
+    width: 140px;
+    height: 210px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.movie strong {
+    text-align: center;
+    font-size: 1em;
+}
+
+.movie span {
+    font-size: 0.9em;
+}
